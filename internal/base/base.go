@@ -26,13 +26,13 @@ import (
 const Version = "0.24.1"
 
 // DefaultQueueName is the queue name used if none are specified by user.
-const DefaultQueueName = "default"
+var DefaultQueueName = "default"
 
 // DefaultQueue is the redis key for the default queue.
 var DefaultQueue = PendingKey(DefaultQueueName)
 
 // Global Redis keys.
-const (
+var (
 	AllServers    = "asynq:servers"    // ZSET
 	AllWorkers    = "asynq:workers"    // ZSET
 	AllSchedulers = "asynq:schedulers" // ZSET
